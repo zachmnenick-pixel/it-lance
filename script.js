@@ -418,3 +418,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const textEl = document.getElementById("typewriter");
+  const text = textEl.textContent.trim();
+  textEl.textContent = "";
+
+  ScrollTrigger.create({
+    trigger: textEl,
+    start: "top 80%",
+    once: true,
+    onEnter: () => typeWriter(),
+  });
+
+  function typeWriter() {
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        textEl.textContent += text[index];
+        index++;
+        setTimeout(type, 120);
+      } else {
+        const cursor = document.createElement("span");
+        cursor.textContent = "|";
+        cursor.style.animation = "blink 0.8s infinite";
+        textEl.appendChild(cursor);
+      }
+    }
+    type();
+  }
+});
