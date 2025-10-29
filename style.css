@@ -599,8 +599,8 @@ padding: 100px 0px;
 
 .consultant-photo {
   position: absolute;
-  left: 400px;
-  top: 0px  ;
+  left: -2%;
+  top: 0%;
   transform: translateY(-58%);
   width: 290px;
   height: 280px;
@@ -618,8 +618,8 @@ padding: 100px 0px;
 
 .photo-icon {
   position: absolute;
-  bottom: -20px;
-  left: 540px;
+  bottom: -15%;
+  left: 12%;
   padding: 8px;
   width: 54px;
   height: 54px;
